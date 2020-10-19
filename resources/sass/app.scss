@@ -1,0 +1,533 @@
+// Fonts
+//@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+//@import 'variables';
+
+// Bootstrap
+//@import '~bootstrap/scss/bootstrap';
+
+// Font Awesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+a {
+	text-decoration: none!important;
+    &:link, &:visited, &:active, &:hover {
+    	color: black;
+	}
+}
+
+p {
+    margin: 0px !important;
+    font-family:'Noto Sans JP', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+pre {
+    margin-bottom: 0;
+    p {
+        font-size: 16px;
+    }
+}
+
+#template {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px 40px;
+    margin-bottom: 20px;
+    .contents {
+        background: rgba(200,066,137,0.2);
+        box-shadow: 7px 7px 3px;
+        margin-bottom: 20px;
+        padding: 15px;
+        h2 {
+            padding-bottom: 10px;
+        }
+        p {
+            padding: 0 10px;
+        }
+    }
+    .room {
+        position: relative;
+        height: 80px;
+        .last-message-at {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+        }
+        .talk-to {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 22px;
+        }
+        .last-remark {
+            position: absolute;
+            top: 30px;
+            left: 15px;
+            font-size: 18px;
+        }
+    }
+}
+
+input, button, textarea, select {
+    padding: 10px;
+    border-radius: 7px;
+    background: white;
+    border:none;
+    &:focus {
+        box-shadow:0px 0px 5px 1px rgb(200,066,137)
+                ,0px 0px 5px 1px rgb(200,066,137) inset;
+        outline: none;
+    }
+}
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    &:before {
+        background: linear-gradient(90deg, rgb(200,066,137), rgb(237,188,108)) no-repeat;/* 画像（ここにfixedは入れない） */
+        background-size: cover;/* cover指定できる */
+        content: "";
+        display: block;
+        position: fixed;/* 擬似要素ごと固定 */
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;/* 横幅いっぱい */
+        height: 100vh;/* 縦幅いっぱい */
+    }
+    header {
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px;
+        margin-bottom: 20px;
+        #header-box {
+            #logo {
+                font-size: 50px;
+            }
+            #welcome {
+                padding: 15px;
+                font-size: 18px;
+                display: flex;
+                .menu-name {
+                    margin-right: 10px;
+                    font-size: 18px;
+                }
+            }
+        }
+        #menu-nav {
+            padding: 15px 8px;
+            margin-bottom: 0;
+            .menu {
+                width: 100%;
+                text-align: center;
+                i {
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+    main {
+        h1 {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 5px 30px;
+            margin-bottom: 20px;
+        }
+        //トップページに表示される投稿の設定↓↓
+        .post {
+            background-color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            position: relative;
+            .update-time {
+                position: absolute;
+            }
+            .post-top {
+                    display: flex;
+                .post-type {
+                    padding: 0px 10px;
+                    font-size: 16px;
+                    margin: 5px 10px!important;
+                    border-radius: 30px;
+                    }
+                .recruitment {
+                    background-color: rgb(238, 178, 81);
+                }
+                .join {
+                    background-color: rgb(200,066,137);
+                }
+            }
+            .post-middle {
+                margin-bottom: 14px;
+                font-size: 22px;
+            }
+            .post-bottom {
+                font-size: 18px;
+                .user-info {
+                    padding-right: 10px;
+                }
+            }
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 30px 20px;
+        }
+        .form {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px 40px;
+            margin-bottom: 20px;
+            .form-parts {
+                margin-bottom: 20px;
+                label {
+                    font-size: 18px;
+                    margin-bottom: 0;
+                    .required {
+                        font-size: 14px;
+                        color: red;
+                    }
+                }
+                .area {
+                    margin-bottom: 10px;
+                }
+                #body {
+                    resize: none;
+                    width: 100%;
+                }
+            }
+            .btn-box {
+                text-align: center;
+                width: 250px;
+                margin: 0 auto;
+                padding: 15px 0;
+                .btn {
+                    background: linear-gradient(90deg, rgb(200,066,137), rgb(237,188,108));
+                    width: 100%;
+                    padding: 14px 12px;
+                    border:none;
+                    border-radius: 7px;
+                    box-shadow: 0px 5px 0px 0px rgba(0,0,0,0.5);
+                    transition: all 0s;
+                    &:focus {
+                        box-shadow: none;
+                        transform: translate(0, 5px);
+                    }
+                }
+            }
+        }
+        #message-room {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px 40px;
+            margin-bottom: 20px;
+            .self-message {
+                padding: 15px 0;
+                display: flex;
+                justify-content: flex-end;
+                .self-message-content {
+                    text-align: right;
+                    .self-remark {
+                        background: rgba(200,066,137,0.5);
+                        position: relative;
+                        display: inline-block !important;
+                        padding: 5px 10px;
+                        min-width: 10px;
+                        max-width: 100%;
+                        font-size: 16px;
+                        border-radius: 8px;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 25%;
+                            left: 100%;
+                            border: 8px solid transparent;
+                            border-left: 10px solid rgba(200,066,137,0.5);
+                        }
+                    }
+                }
+            }
+            .other-message {
+                padding: 15px 0;
+                display: flex;
+                justify-content: flex-start;
+                .other-message-content {
+                    text-align: left;
+                    .other-remark {
+                        background: rgba(237,188,108,0.8);
+                        position: relative;
+                        display: inline-block !important;
+                        padding: 5px 10px;
+                        min-width: 10px;
+                        max-width: 100%;
+                        font-size: 16px;
+                        border-radius: 8px;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 25%;
+                            right: 100%;
+                            border: 8px solid transparent;
+                            border-right: 10px solid rgba(237,188,108,0.8);
+                        }
+                    }
+                }
+            }
+            p{
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+            #message-form {
+                padding-top: 20px;
+                #message-wrap {
+                    #message-area {
+                        resize: none;
+                        width: 100%;
+                        height: 100px;
+                    }
+                }
+                #submit-wrap {
+                    padding: 0;
+                    .btn {
+                        background: rgba(200,066,137,0.5);
+                        width: 100%;
+                        height: 95%;
+                        padding: 14px 12px;
+                        border:none;
+                        border-radius: 7px;
+                    }
+                }
+            }
+        }
+        #user-basic-info {
+            #image-wrap {
+                text-align: center;
+                margin: 0 auto;
+                #prof-img {
+                    width: 100%;
+                }
+            }
+            #user {
+                text-align: center;
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+        }
+        .btn-box {
+            text-align: center;
+            width: 250px;
+            margin: 0 auto;
+            padding: 15px 0;
+            .btn {
+                background: linear-gradient(90deg, rgb(200,066,137), rgb(237,188,108));
+                width: 100%;
+                padding: 14px 12px;
+                border:none;
+                border-radius: 7px;
+                box-shadow: 0px 5px 0px 0px rgba(0,0,0,0.5);
+                transition: all 0s;
+                &:focus {
+                    box-shadow: none;
+                    transform: translate(0, 5px);
+                }
+            }
+        }
+    }
+    #copyright {
+        height: 160px;
+        font-size: 18px;
+        p {
+            line-height: 160px;
+            text-align: center;
+        }
+    }
+}
+@media screen and (min-width: 768px){
+    h2 {
+        font-size: 24px;
+    }
+
+    body {
+        #header-box {
+            #logo {
+                padding-left: 25px;
+                #burger-menu {
+                    display: none;
+                }
+            }
+            #sp-welcome {
+                display: none;
+            }
+            #menu-nav {
+                .menu {
+                    font-size: 28px;
+                }
+            }
+        }
+        #sp-menu {
+            display: none !important;
+        }
+        .post {
+            .update-time {
+                right: 10px;
+                top: 10px;
+            }
+            .body {
+                 overflow: hidden;
+                 font-size: 18px;
+            }
+            .post-bottom {
+                display: flex;
+            }
+        }
+        #user-basic-info {
+            #image-wrap {
+                max-width: 350px;
+                max-height: 350px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    h2 {
+        font-size: 26px;
+    }
+
+    body  {
+        position: relative;
+        header {
+            margin-bottom: 15px;
+            #header-box {
+                #logo {
+                    font-size: 40px;
+                    text-align: center;
+                    position: relative;
+                }
+                #welcome {
+                    display: none;
+                }
+                #sp-welcome {
+                    line-height: 40px;
+                    text-align: center;
+                }
+            }
+            #menu-nav {
+                display: none;
+                .menu {
+                    font-size: 20px;
+                    width: 100%;
+                    text-align: center;
+                    padding: 5px 15px;
+                }
+            }
+        }
+        #burger-menu {
+            z-index: 10;
+            position: fixed;
+            top: 42px;
+            left: 26px;
+            width: 100%;
+            .btn-trigger {
+                position: relative;
+                width: 40px;
+                height: 32px;
+                cursor: pointer;
+                display: inline-block;
+                transition: all .5s;
+                box-sizing: border-box;
+                span {
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: 4px;
+                    background-color: black;
+                    border-radius: 4px;
+                    display: inline-block;
+                    transition: all .5s;
+                    box-sizing: border-box;
+                    &:nth-of-type(1) {
+                        top: 0px;
+                    }
+                    &:nth-of-type(2) {
+                        top: 14px;
+                    }
+                    &:nth-of-type(3) {
+                        bottom: 0px;
+                    }
+                }
+            }
+            .active {
+                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+                span {
+                    &:nth-of-type(1) {
+                        transform: translateY(16px) rotate(-45deg);
+                        -webkit-transform: translateY(16px) rotate(-45deg);
+                    }
+                    &:nth-of-type(2) {
+                        transform: translateY(2px) rotate(45deg);
+                        -webkit-transform: translateY(2px) rotate(45deg);
+                    }
+                    &:nth-of-type(3) {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+        #sp-menu {
+            z-index: 2;
+            position: fixed;
+            top: 90px;
+            left: 0;
+            padding-top: 20px;
+            background: #fff;
+            height: 300px;
+            width: 100%;
+            overflow: hidden;
+            li {
+                font-size: 18px;
+                margin-bottom: 10px;
+                text-align: left;
+            }
+        }
+        
+        
+        
+        .post {
+            .update-time {
+                bottom: 15px;
+                right: 15px;
+            }
+            .post-bottom {
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 36px;
+                .user-info {
+                    padding-right: 10px;
+                }
+            }
+        }
+        #user-basic-info {
+            #image-wrap {
+                max-width: 200px;
+                max-height: 200px;
+            }
+        }
+    }
+}
+
