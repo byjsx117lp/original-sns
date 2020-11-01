@@ -31,9 +31,5 @@
         "@fortawesome/fontawesome-free": "^5.15.1",
         "laravel-echo": "^1.8.1",
         "pusher-js": "^7.0.0"
-    },
-    "engines": {
-        "node": "12.x",
-        "npm": "6.x"
     }
 }
