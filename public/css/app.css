@@ -6187,8 +6187,7 @@ pre p {
 }
 
 #template .contents {
-  background: rgba(200, 66, 137, 0.2);
-  box-shadow: 7px 7px 3px;
+  background-color: white;
   margin-bottom: 20px;
   padding: 15px;
 }
@@ -6251,8 +6250,7 @@ body {
 }
 
 body:before {
-  background: linear-gradient(90deg, #c84289, #edbc6c) no-repeat;
-  /* 画像（ここにfixedは入れない） */
+  background: #ceecf3;
   background-size: cover;
   /* cover指定できる */
   content: "";
@@ -6269,7 +6267,7 @@ body:before {
 }
 
 body header {
-  background-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   padding: 10px;
   margin-bottom: 20px;
 }
@@ -6332,11 +6330,11 @@ body main .post .post-top .post-type {
 }
 
 body main .post .post-top .recruitment {
-  background-color: #eeb251;
+  background-color: #f5d39c;
 }
 
 body main .post .post-top .join {
-  background-color: #c84289;
+  background-color: #f094c5;
 }
 
 body main .post .post-middle {
@@ -6527,7 +6525,7 @@ body main .btn-box {
 }
 
 body main .btn-box .btn {
-  background: linear-gradient(90deg, #c84289, #edbc6c);
+  background: #c6e8ff;
   width: 100%;
   padding: 14px 12px;
   border: none;
