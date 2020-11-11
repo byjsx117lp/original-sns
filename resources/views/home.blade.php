@@ -22,7 +22,7 @@
             <p class="body">{{ $post->body }}</p>
         </div>
         <div class="post-bottom">
-            <p class="user-info">{{ \App\User::find($post->user_id)->name }}
+            <p class="user-info">投稿者：{{ \App\User::find($post->user_id)->name }}
                 @foreach(\App\User::AREA as $key => $val)
                     @if(\App\User::find($post->user_id)->residence == $key)
                     ({{$val['label']}})
