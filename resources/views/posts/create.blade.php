@@ -19,7 +19,7 @@
         <label for="post_type">記事タイプ<span class="required">*必須</span></label><br>
         <select name="post_type" id="post_type">
             @foreach(\App\Post::POST_TYPE as $key => $val)
-            <option value="{{ $key }}">{{ $val['label'] }}</option>
+            <option value="{{ $key }}" {{ $key == old('post_type') ? 'selected' : '' }}>{{ $val['label'] }}</option>
             @endforeach
         </select>
     </div>
@@ -57,7 +57,7 @@
             @foreach(\App\User::AREA as $key => $val)
             @if($val['area'] == '北海道地方')
             <input type="checkbox" name="areas[]" id="" value="{{ $key }}" @for($i=0; $i<=4; $i++)
-                {{ $key == old('areas[$i]') ? 'checked' : '' }} @endfor>>{{ $val['label'] }}
+                {{ $key == old('areas[$i]') ? 'checked' : '' }} @endfor>{{ $val['label'] }}
             @endif
             @endforeach
         </div>

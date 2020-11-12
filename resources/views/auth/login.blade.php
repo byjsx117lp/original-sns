@@ -20,7 +20,7 @@
     </div>
 
     <div class="form-parts">
-        <label for="password">パスワード</label><br>
+        <label for="password">パスワード(8文字以上)</label><br>
         <input type="password" id="password" name="password">
     </div>
 
